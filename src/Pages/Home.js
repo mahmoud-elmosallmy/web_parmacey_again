@@ -16,6 +16,6 @@ function Home() {
     )
 }
 const HomeStyle = styled.div`
-
+padding: 30px 0;
 `;
 export default Home

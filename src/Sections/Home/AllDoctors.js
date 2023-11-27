@@ -29,6 +29,7 @@ const ButtonStyle  = styled.div`
         text-decoration: none;
         transition: all .3s;
         font-size: 22px;
+        border-radius: 20px;
     }
     .doctors:hover {
         color: #fff;

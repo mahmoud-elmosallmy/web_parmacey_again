@@ -4,36 +4,11 @@ import TableDoctor from '../../Components/TableDoctors/TableDoctor';
 
 function PageFilterDoctor() {
 
-    // useEffect(() => {
-    //     const tables = document.querySelectorAll("table");
-    //     console.log(tables);
-    //         if (tables) {
-    //         tables.forEach((table) => {
-    //             const headerRow = table.querySelector("thead tr");
-    //             const thElements = headerRow.querySelectorAll("th");
-    //             const tdElements = table.querySelectorAll("tbody tr td");
-    //             const tr = table.querySelectorAll("tbody tr");
-
-    //             let mainIndex = 0;
-    //             tdElements.forEach((td) => {
-    //             let index = mainIndex / tdElements.length;
-    //             td.setAttribute("data-label", thElements[mainIndex].innerHTML);
-
-    //             if (mainIndex == thElements.length - 1) {
-    //                 mainIndex = 0;
-    //             } else {
-    //                 mainIndex += 1;
-    //             }
-    //             });
-    //         });
-    //         }
-    // },[])
 
     return (
         <PageFilterDoctorStyle>
             <div className='parent'>
                 <div className='left'>
-                    {/* <TableDoctor doctors={} /> */}
                     <TableDoctor />
                 </div>
                 <div className='right'>

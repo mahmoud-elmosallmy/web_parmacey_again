@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components';
-import { useDoctors } from '../../Context/FilterContext';
+import { useDoctors } from '../../Context/DoctorsContext';
 
 function TableDoctor() {
 

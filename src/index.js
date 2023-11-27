@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FilterContext from './Context/FilterContext';
+import FilterContext from './Context/DoctorsContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

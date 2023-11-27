@@ -1,19 +1,19 @@
 import axios from 'axios';
 import React, { createContext, useContext, useEffect, useReducer, useState } from 'react'
-import reducer from "../Reducer/FilterReducer";
+import reducer from "../Reducer/DoctorsReducer";
 
-const FilterDoctors = createContext()
+const FilterDoctorsContext = createContext()
 
 const API = "https://data-base-pharmacy.onrender.com/doctors";
 
-function FilterContext({children}) {
+function DoctorsContext({children}) {
 
     const [dataDoctors , setDataDoctors] = useState([])
     console.log(dataDoctors);
 
     const initialAuthState = {
         doctors: [],
-        isLoadingData: false,
+        // isLoadingData: false,
     }
 
     const [state , dispatch] = useReducer(reducer , initialAuthState)
@@ -34,13 +34,13 @@ function FilterContext({children}) {
     },[])
 
     return (
-        <FilterDoctors.Provider value={{...state}}>{children}</FilterDoctors.Provider>
+        <FilterDoctorsContext.Provider value={{...state}}>{children}</FilterDoctorsContext.Provider>
     )
 }
 
 const useDoctors = () => {
-    return useContext(FilterDoctors)
+    return useContext(FilterDoctorsContext)
 };
 
-export default FilterContext;
+export default DoctorsContext;
 export {useDoctors}

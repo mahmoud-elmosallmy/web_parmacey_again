@@ -26,6 +26,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 height: 25vh;
+margin-bottom: 15px;
 
 h2 {
     margin-bottom: 28px;
