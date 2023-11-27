@@ -1,7 +1,25 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components';
+import { useDoctors } from '../../Context/FilterContext';
 
 function TableDoctor() {
+
+    const {doctors} = useDoctors();
+    console.log(doctors);
+
+    const showDoctors = doctors.map((ele) => {
+        return(
+            <tr key={ele.id}>
+            <td>{ele.name}</td>
+            <td>{ele.category}</td>
+            <td>{ele.privateNumber}</td>
+            <td>{ele.clinicNumber}</td>
+            <td>{ele.appointments}</td>
+            <td>{ele.region}</td>
+            <td>{ele.address}</td>
+        </tr>
+        )
+    })
 
     useEffect(() => {
         const tables = document.querySelectorAll("table");
@@ -34,6 +52,7 @@ function TableDoctor() {
                     <thead>
                         <tr>
                             <th> رقم التسلسل</th>
+                            <th>التخصص</th>
                             <th> إسم الدكتور</th>
                             <th> رقم الخاص</th>
                             <th> رقم العيادة</th>
@@ -43,15 +62,7 @@ function TableDoctor() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>محمد الدهشان</td>
-                            <td>023146</td>
-                            <td>023146</td>
-                            <td>من 1 لي 5</td>
-                            <td>طناح</td>
-                            <td>اول شارع الخماره</td>
-                        </tr>
+                        {showDoctors}
                     </tbody>
                 </table>
         </TableDoctorStyle>
