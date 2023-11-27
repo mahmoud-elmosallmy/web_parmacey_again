@@ -10,14 +10,15 @@ function TableDoctor() {
     const showDoctors = doctors.map((ele) => {
         return(
             <tr key={ele.id}>
-            <td>{ele.name}</td>
-            <td>{ele.category}</td>
-            <td>{ele.privateNumber}</td>
-            <td>{ele.clinicNumber}</td>
-            <td>{ele.appointments}</td>
-            <td>{ele.region}</td>
-            <td>{ele.address}</td>
-        </tr>
+                <td>{ele.id}</td>
+                <td>{ele.category}</td>
+                <td>{ele.name}</td>
+                <td>{ele.privateNumber}</td>
+                <td>{ele.clinicNumber}</td>
+                <td>{ele.appointments}</td>
+                <td>{ele.region}</td>
+                <td>{ele.address}</td>
+            </tr>
         )
     })
 
