@@ -17,7 +17,7 @@ function FilterDoctors() {
         return (newValue = ["all" , ...new Set(newValue)])
     }
 
-    const categoryOnlyData = gitUniqueData(all_products, "category")
+    // const categoryOnlyData = gitUniqueData(all_products, "category")
 
     return (
         <div>FilterDoctors</div>

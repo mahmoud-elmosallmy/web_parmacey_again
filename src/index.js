@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FilterContext from './Context/DoctorsContext';
+import DoctorsContext from './Context/DoctorsContext';
+import DoctorsFilterContext from './Context/DoctorsFilterContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <FilterContext>
-      <App />
-    </FilterContext>
-  </React.StrictMode>
+    <DoctorsContext>
+      <DoctorsFilterContext>
+        <App />
+      </DoctorsFilterContext>
+    </DoctorsContext>
+
 );

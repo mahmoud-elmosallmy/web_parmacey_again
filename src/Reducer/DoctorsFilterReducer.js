@@ -1,10 +1,12 @@
 function DoctorsFilterReducer(state , action) {
     switch (action.type) {
-        case "":
+        case "GIT_CATEGORY_DATA":
             
+            
+
             return {
                 ...state,
-                doctors: action.payload
+                filterDoctors: action.payload
             }
     
         default:

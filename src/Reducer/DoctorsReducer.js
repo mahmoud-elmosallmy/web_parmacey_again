@@ -13,6 +13,18 @@ function FilterReducer(state , action) {
                 ...state,
                 isLoadingData: true
             }
+        case "GIT_CATEGORY_DATA":
+            
+            return {
+                ...state,
+                category: action.payload
+            }
+        case "SET_LOADING_CATEGORY_DATA":
+            
+            return {
+                ...state,
+                isLoadingData: true
+            }
     
         default:
             return state;

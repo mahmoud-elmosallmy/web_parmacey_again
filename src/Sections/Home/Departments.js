@@ -1,41 +1,31 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components'
-import Children from "../../Assets/children.jpg";
+import { useDoctors } from '../../Context/DoctorsContext';
+// import Children from "../../Assets/children.jpg";
+
 
 function Departments() {
+
+    const {category} = useDoctors()
+
+    const showDepartments = category.map((ele) => {
+        return(
+            <div className='box'>
+                <h2>{ele.category}</h2>
+                <img src={ele.image} className="card-img-top" alt={ele.category} />
+                <div className="card-body">
+                    <NavLink to="#" className="btn btn-primary">فتح</NavLink>
+                </div>
+            </div>
+        )
+    })
+
     return (
         <DepartmentStyle>
             <div className='container'>
                 <div className='parent'>
-                    <div className='box'>
-                        <h2>أطفال</h2>
-                        <img src={Children} className="card-img-top" alt="..." />
-                        <div className="card-body">
-                            <NavLink to="#" className="btn btn-primary">مشاهدة جميع دكاتره الاطفال</NavLink>
-                        </div>
-                    </div>
-                    <div className='box'>
-                        <h2>جلديه</h2>
-                        <img src={Children} className="card-img-top" alt="..." />
-                        <div className="card-body">
-                            <NavLink to="#" className="btn btn-primary">مشاهدة جميع دكاتره جلديه</NavLink>
-                        </div>
-                    </div>
-                    <div className='box'>
-                        <h2>جراحه</h2>
-                        <img src={Children} className="card-img-top" alt="..." />
-                        <div className="card-body">
-                            <NavLink to="#" className="btn btn-primary">مشاهدة جميع دكاتره جراحه</NavLink>
-                        </div>
-                    </div>
-                    <div className='box'>
-                        <h2>عظام</h2>
-                        <img src={Children} className="card-img-top" alt="..." />
-                        <div className="card-body">
-                            <NavLink to="#" className="btn btn-primary">مشاهدة جميع دكاتره عظام</NavLink>
-                        </div>
-                    </div>
+                    {showDepartments}
                 </div>
             </div>
         </DepartmentStyle>
