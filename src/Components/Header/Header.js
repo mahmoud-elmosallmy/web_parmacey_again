@@ -32,10 +32,27 @@ border-bottom: 1px solid #d2d2d2;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 3px;
 
 
     .logo img {
         width: 100px;
+    }
+
+    .serve {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        
+        h4 {
+            margin: 0;
+            font-size: 10px;
+        }
+        p {
+            margin: 0;
+            font-size: 13px;
+            font-weight: bold;
+        }
     }
 } 
 `;

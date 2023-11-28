@@ -24,7 +24,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-height: 25vh;
+height: 12vh;
 margin-bottom: 15px;
 
 h2 {
@@ -44,6 +44,11 @@ h2 {
 .btn-primary {
     width: 60px;
     height: 50px;
+}
+@media screen and (min-width: 768px) {
+    & {
+        margin: 25px 0;
+    }
 }
 `;
 

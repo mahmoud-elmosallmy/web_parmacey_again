@@ -1,7 +1,7 @@
 import React from 'react'
 import InputSearch from '../Components/InputSearch/InputSearch'
 import Departments from '../Sections/Home/Departments'
-import AllDoctors from '../Sections/Home/AllDoctors'
+import AddDoctors from '../Sections/Home/AddDoctors'
 import styled from 'styled-components'
 import PhotoPharmacy from '../Sections/Home/PhotoPharmacy'
 
@@ -12,7 +12,7 @@ function Home() {
             <div className='container'>
                 <PhotoPharmacy />
                 <InputSearch />
-                <AllDoctors />
+                <AddDoctors />
                 <Departments />
             </div>
         </HomeStyle>

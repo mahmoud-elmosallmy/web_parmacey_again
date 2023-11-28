@@ -2,18 +2,19 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components'
 
-function AllDoctors() {
+function AddDoctors() {
   return (
     <ButtonStyle>
         <div className='container'>
             <div className='btn'>
-                <NavLink to={'/doctors'} className="doctors">مشاهدة جميع أنواع الدكاترة</NavLink>
+                <NavLink to={'/'} className="doctors"> لإضافة رقم دكتور جديد او غير موجود </NavLink>
             </div>
         </div>
     </ButtonStyle>
   )
 }
 const ButtonStyle  = styled.div`
+margin: 10px 0;
 .btn {
     display: flex;
     align-items: center;
@@ -22,7 +23,7 @@ const ButtonStyle  = styled.div`
     
     .doctors {
         width: 60%;
-        background-color: #0d6efd;
+        background-color: #f7550c;
         padding: 1rem 1rem; 
         color: #fff;
         border: none;
@@ -33,7 +34,7 @@ const ButtonStyle  = styled.div`
     }
     .doctors:hover {
         color: #fff;
-        background-color: #0b5ed7;
+        background-color: #de5213;
         border-color: #0a58ca;
     }
     .doctors:active {
@@ -51,7 +52,12 @@ const ButtonStyle  = styled.div`
         font-size: 17px;
     }
 }
+@media screen and (min-width: 768px) {
+    & {
+        margin: 30px 0;
+    }
+}
 
 `;
 
-export default AllDoctors
+export default AddDoctors
