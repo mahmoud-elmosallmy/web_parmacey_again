@@ -1,27 +1,28 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components';
-import { useDoctors } from '../../Context/DoctorsContext';
+// import { useDoctors } from '../../Context/DoctorsContext';
 
-function TableDoctor() {
+function TableDoctor({doctors}) {
 
-    const {doctors} = useDoctors();
-    console.log(doctors);
-
+    // const {doctors} = useDoctors();
+    // console.log(doctors);
+    let num = 0
     const showDoctors = doctors.map((ele) => {
         return(
             <tr key={ele.id}>
-                <td>{ele.id}</td>
+                <td>{++num}</td>
                 <td>{ele.category}</td>
                 <td>{ele.name}</td>
                 <td>{ele.privateNumber}</td>
                 <td>{ele.clinicNumber}</td>
+                <td>{ele.days}</td>
                 <td>{ele.appointments}</td>
                 <td>{ele.region}</td>
                 <td>{ele.address}</td>
             </tr>
         )
+        
     })
-
     useEffect(() => {
         const tables = document.querySelectorAll("table");
         console.log(tables);
@@ -57,6 +58,7 @@ function TableDoctor() {
                             <th> إسم الدكتور</th>
                             <th> رقم الخاص</th>
                             <th> رقم العيادة</th>
+                            <th> الأيام </th>
                             <th>المواعيد</th>
                             <th>المنطقه</th>
                             <th>العنوان</th>

@@ -15,7 +15,7 @@ function Departments() {
                 <h2>{ele.category}</h2>
                 <img src={ele.image} className="card-img-top" alt={ele.category} />
                 <div className="card-body">
-                    <NavLink to="#" className="btn btn-primary">فتح</NavLink>
+                    <NavLink to={`/category/${ele.category}`} className="btn btn-primary">فتح</NavLink>
                 </div>
             </div>
         )
