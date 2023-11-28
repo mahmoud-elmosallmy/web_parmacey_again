@@ -24,29 +24,29 @@ function TableDoctor({doctors}) {
         
     })
     useEffect(() => {
-        const tables = document.querySelectorAll("table");
-        console.log(tables);
+            const tables = document.querySelectorAll("table");
+            console.log(tables);
             if (tables) {
-            tables.forEach((table) => {
-                const headerRow = table.querySelector("thead tr");
-                const thElements = headerRow.querySelectorAll("th");
-                const tdElements = table.querySelectorAll("tbody tr td");
-                // const tr = table.querySelectorAll("tbody tr");
+                tables.forEach((table) => {
+                    const headerRow = table.querySelector("thead tr");
+                    const thElements = headerRow.querySelectorAll("th");
+                    const tdElements = table.querySelectorAll("tbody tr td");
+                    // const tr = table.querySelectorAll("tbody tr");
 
-                let mainIndex = 0;
-                tdElements.forEach((td) => {
-                // let index = mainIndex / tdElements.length;
-                td.setAttribute("data-label", thElements[mainIndex].innerHTML);
+                    let mainIndex = 0;
+                    tdElements.forEach((td) => {
+                    // let index = mainIndex / tdElements.length;
+                    td.setAttribute("data-label", thElements[mainIndex].innerHTML);
 
-                if (mainIndex === thElements.length - 1) {
-                    mainIndex = 0;
-                } else {
-                    mainIndex += 1;
-                }
+                    if (mainIndex === thElements.length - 1) {
+                        mainIndex = 0;
+                    } else {
+                        mainIndex += 1;
+                    }
+                    });
                 });
-            });
             }
-    },[])
+    },[doctors])
 
     return (
         <TableDoctorStyle>
