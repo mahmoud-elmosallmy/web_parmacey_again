@@ -1,8 +1,13 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components';
+import Spine from '../Loading/Spine';
+import { useDoctors } from '../../Context/DoctorsContext';
 // import { useDoctors } from '../../Context/DoctorsContext';
 
 function TableDoctor({doctors}) {
+
+    const { isLoadingDataCategory} = useDoctors()
+    console.log(isLoadingDataCategory);
 
     // const {doctors} = useDoctors();
     // console.log(doctors);
@@ -48,26 +53,33 @@ function TableDoctor({doctors}) {
             }
     },[doctors])
 
+    if (isLoadingDataCategory) {
+        return <Spine />
+    }
+    // if(isLoadingFilterDoctors) {
+    //     return <Spine />
+    // }
+
     return (
         <TableDoctorStyle>
             <table width="100%">
-                    <thead>
-                        <tr>
-                            <th> رقم التسلسل</th>
-                            <th>التخصص</th>
-                            <th> إسم الدكتور</th>
-                            <th> رقم الخاص</th>
-                            <th> رقم العيادة</th>
-                            <th> الأيام </th>
-                            <th>المواعيد</th>
-                            <th>المنطقه</th>
-                            <th>العنوان</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {showDoctors}
-                    </tbody>
-                </table>
+                <thead>
+                    <tr>
+                        <th> رقم التسلسل</th>
+                        <th>التخصص</th>
+                        <th> إسم الدكتور</th>
+                        <th> رقم الخاص</th>
+                        <th> رقم العيادة</th>
+                        <th> الأيام </th>
+                        <th>المواعيد</th>
+                        <th>المنطقه</th>
+                        <th>العنوان</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {showDoctors}
+                </tbody>
+            </table>
         </TableDoctorStyle>
     )
 }

@@ -5,21 +5,16 @@ import { useDoctors } from './DoctorsContext';
 const FilterDoctors = createContext()
 
 function DoctorsFilterContext({children}) {
-
-    const [numId, setNumId] = useState([])
-    // const [dataDoctors , setDataDoctors] = useState([])
-    // console.log(dataDoctors);
+    
     const { doctors } = useDoctors()
-    // console.log(doctors);
+    const [numId, setNumId] = useState([])
 
     const initialAuthState = {
         filterDoctorsChildren: [],
-        // isLoadingData: false,
+        isLoadingFilterDoctors: true,
     }
 
-    // const [state , dispatch] = useReducer(reducer , initialAuthState)
     const [state , dispatch] = useReducer(reducer , initialAuthState)
-    // dispatch({type: "FILTER"})
 
 
 
@@ -27,7 +22,7 @@ function DoctorsFilterContext({children}) {
         dispatch({type: "GIT_DOCTORS_CHILDREN", payload: [doctors , `${numId}`]})
     },[numId,doctors])
 
-    console.log(state);
+    // console.log(state);
 
     return (
         <FilterDoctors.Provider value={{...state , setNumId}}>{children}</FilterDoctors.Provider>

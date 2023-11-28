@@ -2,12 +2,17 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components'
 import { useDoctors } from '../../Context/DoctorsContext';
-// import Children from "../../Assets/children.jpg";
-
+import Spine from '../../Components/Loading/Spine';
 
 function Departments() {
 
-    const {category} = useDoctors()
+    const { category , isLoadingDataCategory} = useDoctors();
+
+    console.log(isLoadingDataCategory);
+    if (isLoadingDataCategory) {
+        return <Spine />
+    }
+
 
     const showDepartments = category.map((ele) => {
         return(

@@ -1,6 +1,12 @@
 
 function FilterReducer(state , action) {
     switch (action.type) {
+        case "SET_LOADING_CATEGORY_DATA":
+            
+            return {
+                ...state,
+                isLoadingDataCategory: true
+            }
         case "GIT_DOCTORS":
             
             return {
@@ -11,19 +17,14 @@ function FilterReducer(state , action) {
             
             return {
                 ...state,
-                isLoadingData: true
+                isLoadingData: false
             }
         case "GIT_CATEGORY_DATA":
             
             return {
                 ...state,
+                isLoadingDataCategory: false,
                 category: action.payload
-            }
-        case "SET_LOADING_CATEGORY_DATA":
-            
-            return {
-                ...state,
-                isLoadingData: true
             }
     
         default:

@@ -4,6 +4,7 @@ import InputSearch from '../Components/InputSearch/InputSearch';
 import PageFilterDoctor from '../Sections/Doctors/PageFilterDoctor';
 
 function Doctors() {
+
     return (
         <DoctorsStyle>
             <div className='container'>

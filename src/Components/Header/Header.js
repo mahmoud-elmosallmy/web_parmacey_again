@@ -35,7 +35,7 @@ border-bottom: 1px solid #d2d2d2;
 
 
     .logo img {
-        width: 200px;
+        width: 100px;
     }
 } 
 `;

@@ -9,11 +9,6 @@ const APICategory = "https://data-base-pharmacy.onrender.com/categorydoctors";
 
 function DoctorsContext({children}) {
 
-    // const [dataDoctors , setDataDoctors] = useState([])
-    // console.log(dataDoctors);
-    // const [dataCategory , setDataCategory] = useState([])
-    // console.log(dataDoctors);
-
     const initialAuthState = {
         doctors: [],
         isLoadingData: false,
@@ -21,7 +16,6 @@ function DoctorsContext({children}) {
         isLoadingDataCategory: false,
     }
 
-    // const [state , dispatch] = useReducer(reducer, initialAuthState)
     const [state , dispatch] = useReducer(reducer, initialAuthState)
 
     const gitData = async (url) => {
@@ -29,7 +23,6 @@ function DoctorsContext({children}) {
         try {
             const res = await axios.get(url);
             dispatch({type: "GIT_DOCTORS",payload: res.data})
-            // setDataDoctors(res.data);
         } catch (err) {
             console.log(err);
         }
@@ -39,7 +32,6 @@ function DoctorsContext({children}) {
         try {
             const res = await axios.get(url);
             dispatch({type: "GIT_CATEGORY_DATA",payload: res.data})
-            // setDataCategory(res.data);
         } catch (err) {
             console.log(err);
         }

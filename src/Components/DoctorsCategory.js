@@ -11,7 +11,6 @@ function DoctorsCategory() {
     // console.log(id);
     setNumId(id);
     
-    // const {} = 
 
   return (
     <DoctorsCategoryStyle>
