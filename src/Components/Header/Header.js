@@ -25,6 +25,10 @@ function Header() {
 }
 
 const HeaderStyle = styled.div`
+position: sticky;
+top: 0px;
+z-index: 2;
+background-color: white;
 box-shadow: 0 4px 13px -3px rgba(0, 0, 0, 0.10196);
 border-bottom: 1px solid #d2d2d2;
 

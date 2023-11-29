@@ -13,13 +13,13 @@ function App() {
     <div className="App">
       <Router>
         <GlobalStyle />
-        <Header />
-        <Routes>
-          <Route path={"/"} element={<Home />} />
-          <Route path={"/doctors"} element={<Doctors />} />
-          <Route path={"/category/:id"} element={<DoctorsCategory />} />
-        </Routes>
-        <Footer />
+          <Header />
+          <Routes>
+            <Route path={"/"} element={<Home />} />
+            <Route path={"/doctors"} element={<Doctors />} />
+            <Route path={"/category/:id"} element={<DoctorsCategory />} />
+          </Routes>
+          <Footer />
       </Router>
     </div>
   );

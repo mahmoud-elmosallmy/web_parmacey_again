@@ -4,7 +4,9 @@ import Photo from "../../Assets/parmacey.png";
 function PhotoPharmacy() {
   return (
     <PhotoPharmacyStyle>
-        <img src={Photo} alt='PhotoPharmacy'/>
+        <div className='divimage'>
+            <img src={Photo} alt='PhotoPharmacy'/>
+        </div>
         <div className='namedoc'> 
             <h6>. صيدلية الدكتور عبدالبديع</h6>
             <p> متاح خدمة التوصبل مجانا </p>
@@ -13,6 +15,19 @@ function PhotoPharmacy() {
   )
 }
 const PhotoPharmacyStyle = styled.section`
+position: relative;
+ &::before {
+    content: '';
+    position: absolute;
+    right: 35px;
+    bottom: 19px;
+    width: 166px;
+    height: 111px;
+    background-color: white;
+    z-index: 1;
+    filter: blur(23px);
+    opacity: 0.9;
+}
 img {
     width: 100%;
 }
@@ -20,6 +35,10 @@ img {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    position: absolute;
+    right: 34px;
+    bottom: 33px;
+    z-index: 4;
 
     h6 {
         color: #ff5000;
