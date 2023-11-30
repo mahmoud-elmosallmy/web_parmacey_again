@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from '../../Assets/logo.png'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
-import { IoCall } from "react-icons/io5";
+// import { IoCall } from "react-icons/io5";
 
 function Header() {
     return (
@@ -13,10 +13,13 @@ function Header() {
                         <img src={Logo} alt='logo'/>
                     </Link>
                     <div className='links'>
-                        <div className='serve'>
+                        <Link to={'/'}> الرئيسية </Link>
+                        <Link to={'/specialties'}> التخصصات </Link>
+                        <Link to={'/support'}> الدعم </Link>
+                        {/* <div className='serve'>
                             <h4>خدمه العملاء</h4>
                             <p><IoCall /> 01009710971</p>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
@@ -27,7 +30,7 @@ function Header() {
 const HeaderStyle = styled.div`
 position: sticky;
 top: 0px;
-z-index: 2;
+z-index: 7;
 background-color: white;
 box-shadow: 0 4px 13px -3px rgba(0, 0, 0, 0.10196);
 border-bottom: 1px solid #d2d2d2;
@@ -42,8 +45,21 @@ border-bottom: 1px solid #d2d2d2;
     .logo img {
         width: 100px;
     }
+    
+    .links {
 
-    .serve {
+        a {
+            text-decoration: none;
+            color: #000;
+            transition: .3s;
+            margin-left: 8px;
+        }
+        a:hover {
+            color: #ff5000;
+        }
+    }
+
+    /* .serve {
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -57,7 +73,7 @@ border-bottom: 1px solid #d2d2d2;
             font-size: 13px;
             font-weight: bold;
         }
-    }
+    } */
 } 
 `;
 

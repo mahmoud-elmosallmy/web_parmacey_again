@@ -18,7 +18,7 @@ const Spinner = styled.div`
     background: rgba(154, 160, 167, 0.3);
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 10;
     
     .spinner {
         margin: 0 10px;

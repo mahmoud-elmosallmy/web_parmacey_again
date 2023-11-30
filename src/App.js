@@ -5,6 +5,8 @@ import Header from './Components/Header/Header';
 import Doctors from './Pages/Doctors';
 import DoctorsCategory from './Components/DoctorsCategory';
 import Footer from './Components/Footer/Footer';
+import Specialties from './Pages/Specialties';
+import Support from './Pages/Support';
 
 // const API = "https://data-base-pharmacy.onrender.com/children";
 
@@ -18,6 +20,8 @@ function App() {
             <Route path={"/"} element={<Home />} />
             <Route path={"/doctors"} element={<Doctors />} />
             <Route path={"/category/:id"} element={<DoctorsCategory />} />
+            <Route path={"/specialties"} element={<Specialties />} />
+            <Route path={"/support"} element={<Support />} />
           </Routes>
           <Footer />
       </Router>
