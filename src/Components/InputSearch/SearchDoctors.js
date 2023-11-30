@@ -6,12 +6,10 @@ import styled from 'styled-components';
 function SearchDoctors() {
 
     const {filterDoctors} = useFilterDoctors()
-    console.log(filterDoctors);
-
 
     const showDoctorsSearch = filterDoctors.map((ele) => {
         return (
-            <Link to={`/`} className='box'>
+            <Link to={`/show_doctor/${ele.id}`} className='box'>
                 <div className='data'>
                     <h5>{ele.name}</h5>
                     <div className='category_region'>
@@ -26,7 +24,7 @@ function SearchDoctors() {
     <SearchDoctorsStyle>
         <div className='search_product'>
                 {showDoctorsSearch}
-                {filterDoctors.length === 0 && <p className='word'>There is no product with this name</p>}
+                {filterDoctors.length === 0 && <p className='word'> لا يوجود دكتور بهذا الاسم </p>}
         </div>
     </SearchDoctorsStyle>
   )
@@ -72,6 +70,7 @@ box-shadow: 0 8px 16px #0000000f;
         .category_region {
             display: flex;
             width: 160px;
+            align-items: center;
             justify-content: space-around;
             flex-direction: row-reverse;
             border-right: 1px solid #000;
@@ -95,12 +94,13 @@ box-shadow: 0 8px 16px #0000000f;
         width: 100%;
 
         .box h5 {
-            font-size: 12px;
+            font-size: 15px;
         }
         .data .category_region {
             width: 90px !important;
             p {
-                font-size: 8px;
+                font-size: 11px;
+                margin-bottom: 0;
             }
         }
     }

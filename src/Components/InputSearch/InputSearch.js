@@ -20,7 +20,7 @@ function InputSearch() {
                     <input type="search" id="form1" className="form-control" name='search' placeholder='إكتب هنا' onChange={updateFilterValue} />
                     {/* <label className="form-label" htmlFor="form1">Search</label> */}
                     <button type="submit" className="btn btn-primary" data-mdb-ripple-init>
-                        <FaSearch />Search
+                        <FaSearch /> بحث
                     </button>
                 </form>
                 {search && <SearchDoctors /> }
@@ -51,6 +51,15 @@ h2 {
     justify-content: space-between;
     align-items: center;
     width: 95px;
+
+    .form-control:focus {
+        color: #ff5000;
+        background-color: var(--bs-body-bg);
+        border-color: #ff5000;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem rgba(255,80,0,.25);
+        font-size: 20px;
+    }
 }
 .form-control {
     flex: 1;

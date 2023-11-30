@@ -7,10 +7,7 @@ import { useDoctors } from '../../Context/DoctorsContext';
 function TableDoctor({doctors}) {
 
     const { isLoadingDataCategory} = useDoctors()
-    console.log(isLoadingDataCategory);
 
-    // const {doctors} = useDoctors();
-    // console.log(doctors);
     let num = 0
     const showDoctors = doctors.map((ele) => {
         return(

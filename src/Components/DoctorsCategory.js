@@ -6,9 +6,8 @@ import InputSearch from './InputSearch/InputSearch';
 import TableDoctor from './TableDoctors/TableDoctor';
 
 function DoctorsCategory() {
-    const {setNumId , filterDoctorsChildren} = useFilterDoctors()
+    const {setNumId , doctorsCategory} = useFilterDoctors()
     const {id} = useParams()
-    // console.log(id);
     setNumId(id);
     
 
@@ -16,7 +15,7 @@ function DoctorsCategory() {
     <DoctorsCategoryStyle>
         <div className='container'>
             <InputSearch />
-            <TableDoctor doctors={filterDoctorsChildren} />
+            <TableDoctor doctors={doctorsCategory} />
         </div>
     </DoctorsCategoryStyle>
   )

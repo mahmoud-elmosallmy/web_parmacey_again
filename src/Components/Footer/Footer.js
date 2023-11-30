@@ -64,5 +64,10 @@ padding: 20px 0;
     font-size: 10px;
     margin-top: 15px;
 }
+@media screen and (max-width: 768px) {
+    .parent {
+        width: 100%
+    }   
+}
 `;
 export default Footer

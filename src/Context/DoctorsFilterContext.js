@@ -11,6 +11,7 @@ function DoctorsFilterContext({children}) {
 
     const initialAuthState = {
         all_doctors: [],
+        doctorsCategory: [],
         filterDoctors: [],
         isLoadingFilterDoctors: true,
         filters: {
@@ -24,20 +25,22 @@ function DoctorsFilterContext({children}) {
     const updateFilterValue = (event) => {
         const name = event.target.name
         const value = event.target.value
-        // console.log(name);
-        // console.log(value);
         return dispatch({type: "UPDATE_FILTER_VALUE", payload: {name , value}})
     }
 
     useEffect(() => {
         dispatch({type: "LOAD_FILTER_DOCTORS", payload: doctors})
     },[doctors])
+
     useEffect(() => {
-        dispatch({type: "GIT_DOCTORS_CHILDREN", payload: [doctors , `${numId}`]})
+        dispatch({type: "GIT_DOCTORS_CATEGORY", payload: [doctors , `${numId}`]})
     },[numId,doctors])
+
     useEffect(() => {
         dispatch({type: "FILTER_DOCTORS"})
     },[state.filters])
+
+    console.log(state);
 
     return (
         <FilterDoctors.Provider value={{ ...state , setNumId , updateFilterValue }}>{children}</FilterDoctors.Provider>

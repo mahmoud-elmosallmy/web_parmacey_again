@@ -6,14 +6,14 @@ function DoctorsFilterReducer(state , action) {
                 ...state,
                 all_doctors: [...action.payload],
             }
-        case "GIT_DOCTORS_CHILDREN":
-            const doctorsChildren = action.payload[0].filter((ele) => {
+        case "GIT_DOCTORS_CATEGORY":
+            const doctorsCategory = action.payload[0].filter((ele) => {
                 return ele.category === action.payload[1]
             })
 
             return {
                 ...state,
-                filterDoctorsChildren: doctorsChildren,
+                doctorsCategory: doctorsCategory,
             }
         case "UPDATE_FILTER_VALUE":
             const {name , value} = action.payload;
@@ -24,13 +24,11 @@ function DoctorsFilterReducer(state , action) {
             }
         case "FILTER_DOCTORS":
             const {all_doctors} = state;
-
             let temFilterDoctors = [...all_doctors]
             const {search} = state.filters;
 
             if (search) {
                 temFilterDoctors = temFilterDoctors.filter((ele) => {
-
                     return ele.name.toLowerCase().includes(search)
                 })
             }
