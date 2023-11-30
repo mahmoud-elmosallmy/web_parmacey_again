@@ -7,7 +7,7 @@ function AddDoctors() {
     <ButtonStyle>
         <div className='container'>
             <div className='btn'>
-                <NavLink to={'/'} className="doctors"> لإضافة رقم دكتور جديد او غير موجود </NavLink>
+                <NavLink to={'/support'} className="doctors"> لإضافة رقم دكتور جديد او غير موجود </NavLink>
             </div>
         </div>
     </ButtonStyle>
