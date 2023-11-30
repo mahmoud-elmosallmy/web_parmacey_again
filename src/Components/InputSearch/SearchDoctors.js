@@ -37,7 +37,7 @@ width: 85%;
 top: 50px;
 z-index: 5;
 border-radius: 12px;
-padding: 0 10px 15px;
+padding: 0 10px ;
 background: #fff;
 box-shadow: 0 8px 16px #0000000f;
 
@@ -78,19 +78,32 @@ box-shadow: 0 8px 16px #0000000f;
         }
         h5,
         p {
-            text-decoration: none;
             color: #000;
             transition: .3s;
         }
         h5:hover,
         p:hover {
-            text-decoration: none;
             color: #ff5000;
         }
     }
 }
 .box:last-child {
     border-bottom: none;
+}
+@media screen and (max-width: 768px) {
+    & {
+        width: 100%;
+
+        .box h5 {
+            font-size: 12px;
+        }
+        .data .category_region {
+            width: 90px !important;
+            p {
+                font-size: 8px;
+            }
+        }
+    }
 }
 `;
 

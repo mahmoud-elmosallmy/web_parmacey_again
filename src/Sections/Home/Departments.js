@@ -43,11 +43,30 @@ const DepartmentStyle = styled.section`
 }
 .parent .box {
     width: 300px;
-    padding: 15px;
+    padding: 5px;
     text-align: center;
     border: 1px solid #0d6efd;
     border-radius: 12px;
     margin-bottom: 10px;
+    position: relative;
+
+    img {
+        border-radius: 15px;
+    }
+}
+.card-body {
+    position: absolute;
+    bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+
+    a {
+        width: 40%;
+        background-color: #ff5000;
+        border: #ff5000;
+        font-weight: bold;
+    }
 }
 @media screen and (max-width: 768px) {
     .parent .box {
