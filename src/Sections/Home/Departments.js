@@ -45,7 +45,7 @@ const DepartmentStyle = styled.section`
     width: 300px;
     padding: 5px;
     text-align: center;
-    border: 1px solid #0d6efd;
+    border: 1px solid #ff5000;
     border-radius: 12px;
     margin-bottom: 10px;
     position: relative;
