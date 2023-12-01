@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from '../../Assets/logo.png'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
+import { CgMenuRightAlt , CgClose } from "react-icons/cg";
+
 // import { IoCall } from "react-icons/io5";
 
 function Header() {
+    const [menuIcon , setMenuIcon] = useState()
+
+    console.log(menuIcon);
+
+    const menuScrollOpen = () => setMenuIcon(true)
+    const menuScrollClose = () => setMenuIcon(false)
+
     return (
         <HeaderStyle>
             <div className='container'>
@@ -12,14 +21,26 @@ function Header() {
                     <Link to={'/'} className='logo'>
                         <img src={Logo} alt='logo'/>
                     </Link>
-                    <div className='links'>
-                        <Link to={'/'}> الرئيسية </Link>
-                        <Link to={'/specialties'}> التخصصات </Link>
-                        <Link to={'/support'}> الدعم </Link>
-                        {/* <div className='serve'>
-                            <h4>خدمه العملاء</h4>
-                            <p><IoCall /> 01009710971</p>
-                        </div> */}
+                    <div className={menuIcon ? "nav_bar active" : "nav_bar"}>
+
+                        <div className='links'>
+                            <Link to={'/'} onClick={() => setMenuIcon(false)} > الرئيسية </Link>
+                            <Link to={'/specialties'} onClick={() => setMenuIcon(false)} > التخصصات </Link>
+                            <Link to={'/support'} onClick={() => setMenuIcon(false)} > الدعم </Link>
+                        </div>
+
+                        <div className='mobile-navbar-btn'>
+                            <CgMenuRightAlt 
+                                name="menu-outline" 
+                                className="mobile-nav-icon"
+                                onClick={menuScrollOpen}
+                            />
+                            <CgClose 
+                                name="close-outline" 
+                                className="mobile-nav-icon close-outline"
+                                onClick={menuScrollClose}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -59,22 +80,81 @@ border-bottom: 1px solid #d2d2d2;
         }
     }
 
-    /* .serve {
+    .mobile-navbar-btn {
+        display: none;
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+    }
+    .mobile-nav-icon[name="close-outline"] {
+        display: none;
+        transition: all 8.4s;
+    }
+    .close-outline {
+        display: none;
+    }
+} 
+
+@media screen and (max-width: 767px) {
+    .links {
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+
         display: flex;
+        justify-content: center;
         align-items: center;
         flex-direction: column;
+
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-100%);
+        /* transform-origin: top; */
+        transition: all .3s linear;
+    }
+
+    .active .links {
+        width: 100%;
+        gap: 45px;
+        visibility: visible;
+        opacity: 1;
+        overflow: hidden;
+        transform: translateX(0);
+        z-index: 999;
+        transform-origin: right;
+        transition: all .3s linear;
+
+        .navbar-link {
+            font-size: 4.2rem;
+        }
+    }
+
+    .nav_bar .mobile-navbar-btn {
+        display: inline-block;  
+        z-index: 9999;
+        border: black;
+
+        .mobile-nav-icon {
+            font-size: 2.2rem;
+            color: black
+        };
+    }
+    .active .mobile-nav-icon {
+        display: none;
+        font-size: 4.2rem;
+        position: fixed;
+        top: 3%;
+        right: 5%;
+        color: black;
+        z-index: 9999;
         
-        h4 {
-            margin: 0;
-            font-size: 10px;
-        }
-        p {
-            margin: 0;
-            font-size: 13px;
-            font-weight: bold;
-        }
-    } */
-} 
+    }
+    .active .close-outline {
+        display: inline-block !important;
+    }
+}
 `;
 
 export default Header
