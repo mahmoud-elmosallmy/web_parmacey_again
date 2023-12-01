@@ -79,11 +79,6 @@ border-bottom: 1px solid #d2d2d2;
             color: #000;
             transition: .3s;
             margin-left: 8px;
-            font-size: 40px;
-            font-weight: bold;
-            background-color: #ff5000;
-            color: white;
-            padding: 15px;
         }
         a:hover {
             color: #ff5000;
@@ -136,6 +131,13 @@ border-bottom: 1px solid #d2d2d2;
         transform-origin: right;
         transition: all .3s linear;
 
+        a {
+            font-size: 40px;
+            font-weight: bold;
+            background-color: #ff5000;
+            color: white;
+            padding: 15px;
+        }
         .navbar-link {
             font-size: 4.2rem;
         }

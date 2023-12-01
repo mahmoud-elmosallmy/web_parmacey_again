@@ -58,7 +58,7 @@ function Support() {
   )
 }
 const SupportStyle = styled.div`
-min-height: 71.5vh;
+min-height: 71.6vh;
 padding: 10px;
 .support {
   display: flex;
