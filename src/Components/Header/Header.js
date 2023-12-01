@@ -63,8 +63,13 @@ border-bottom: 1px solid #d2d2d2;
     padding: 3px;
 
 
+    .logo {
+        z-index: 99999;
+        /* margin-top: 20px; */
+    }
     .logo img {
-        width: 100px;
+        width: 130px;
+
     }
     
     .links {
@@ -74,6 +79,11 @@ border-bottom: 1px solid #d2d2d2;
             color: #000;
             transition: .3s;
             margin-left: 8px;
+            font-size: 40px;
+            font-weight: bold;
+            background-color: #ff5000;
+            color: white;
+            padding: 15px;
         }
         a:hover {
             color: #ff5000;
@@ -143,9 +153,9 @@ border-bottom: 1px solid #d2d2d2;
     }
     .active .mobile-nav-icon {
         display: none;
-        font-size: 4.2rem;
+        font-size: 3.2rem;
         position: fixed;
-        top: 3%;
+        top: 2%;
         right: 5%;
         color: black;
         z-index: 9999;

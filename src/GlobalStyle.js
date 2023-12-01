@@ -1,7 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-
+* {
+    font-family: 'Marhey', sans-serif;
+}
 h1,
 h2,
 h3,
