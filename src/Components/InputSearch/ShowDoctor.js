@@ -35,6 +35,7 @@ function ShowDoctor() {
                     })}
                 </div>
             </td>
+
             <td>
                 <div className='child'>
                     {ele.appointments}
@@ -52,7 +53,7 @@ function ShowDoctor() {
                             <p>{Elem}</p>
                         )
                     })}
-                    {ele.clinicNumberRegion2.map((Elem) => {
+                    {ele.clinicNumberRegion2 && ele.clinicNumberRegion2.map((Elem) => {
                         return (
                             <p>{Elem}</p>
                         )

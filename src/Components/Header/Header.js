@@ -4,8 +4,6 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom';
 import { CgMenuRightAlt , CgClose } from "react-icons/cg";
 
-// import { IoCall } from "react-icons/io5";
-
 function Header() {
     const [menuIcon , setMenuIcon] = useState()
 

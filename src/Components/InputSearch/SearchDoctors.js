@@ -8,6 +8,7 @@ function SearchDoctors() {
     const {filterDoctors} = useFilterDoctors()
 
     const showDoctorsSearch = filterDoctors.map((ele) => {
+        console.log(ele.region);
         return (
             <Link to={`/show_doctor/${ele.id}`} className='box'>
                 <div className='data'>

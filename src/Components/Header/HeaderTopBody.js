@@ -17,6 +17,7 @@ display: flex;
 align-items: center;
 font-size: 1.2rem;
 flex-direction: row-reverse;
+margin: 0 0 30px 0;
 
 a {
     text-decoration: none;
