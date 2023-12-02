@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router';
 import styled from 'styled-components'
 import { useFilterDoctors } from '../../Context/DoctorsFilterContext';
