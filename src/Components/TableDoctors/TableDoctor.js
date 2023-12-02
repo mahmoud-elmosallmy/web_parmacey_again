@@ -12,15 +12,63 @@ function TableDoctor({doctors}) {
     const showDoctors = doctors.map((ele) => {
         return(
             <tr key={ele.id}>
-                <td>{++num}</td>
-                <td>{ele.category}</td>
-                <td>{ele.name}</td>
-                <td>{ele.privateNumber}</td>
-                <td>{ele.clinicNumber}</td>
-                <td>{ele.days}</td>
-                <td>{ele.appointments}</td>
-                <td>{ele.region}</td>
-                <td>{ele.address}</td>
+                <td className='add_bottom'>
+                    <div className='child'>
+                        {ele.address.map((Elem) => {
+                            return (
+                                <p>{Elem}</p>
+                            )
+                        })}
+                    </div>
+                </td>
+                <td className='add_bottom'>
+                    <div className='child'>
+                        {ele.region.map((Elem) => {
+                            return (
+                                <p>{Elem}</p>
+                            )
+                        })}
+                    </div>
+                </td>
+                <td>
+                    <div className='child'>
+                        {ele.appointments}
+                    </div>
+                </td>
+                <td>
+                    <div className='child'>
+                        {ele.days}
+                    </div>
+                </td>
+                <td className='add_bottom'>
+                    <div className='child'>
+                        {ele.clinicNumber.map((Elem) => {
+                            return (
+                                <p>{Elem}</p>
+                            )
+                        })}
+                    </div>
+                </td>
+                <td>
+                    <div className='child'>
+                        {ele.privateNumber}
+                    </div>
+                </td>
+                <td>
+                    <div className='child'>
+                        {ele.name}
+                    </div>
+                </td>
+                <td>
+                    <div className='child'>
+                        {ele.category}
+                    </div>
+                </td>
+                <td>
+                    <div className='child'>
+                        {++num}
+                    </div>
+                </td>
             </tr>
         )
         
@@ -33,11 +81,9 @@ function TableDoctor({doctors}) {
                     const headerRow = table.querySelector("thead tr");
                     const thElements = headerRow.querySelectorAll("th");
                     const tdElements = table.querySelectorAll("tbody tr td");
-                    // const tr = table.querySelectorAll("tbody tr");
-
                     let mainIndex = 0;
                     tdElements.forEach((td) => {
-                    // let index = mainIndex / tdElements.length;
+                        console.log(td);
                     td.setAttribute("data-label", thElements[mainIndex].innerHTML);
 
                     if (mainIndex === thElements.length - 1) {
@@ -48,29 +94,26 @@ function TableDoctor({doctors}) {
                     });
                 });
             }
-    },[doctors])
+    },[doctors , isLoadingDataCategory])
 
     if (isLoadingDataCategory) {
         return <Spine />
     }
-    // if(isLoadingFilterDoctors) {
-    //     return <Spine />
-    // }
 
     return (
         <TableDoctorStyle>
             <table width="100%">
                 <thead>
                     <tr>
-                        <th> رقم التسلسل</th>
-                        <th>التخصص</th>
-                        <th> إسم الدكتور</th>
-                        <th> رقم الخاص</th>
-                        <th> رقم العيادة</th>
-                        <th> الأيام </th>
-                        <th>المواعيد</th>
-                        <th>المنطقه</th>
                         <th>العنوان</th>
+                        <th>المنطقه</th>
+                        <th>المواعيد</th>
+                        <th> الأيام </th>
+                        <th> رقم العيادة</th>
+                        <th> رقم الخاص</th>
+                        <th> إسم الدكتور</th>
+                        <th>التخصص</th>
+                        <th> رقم التسلسل</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -101,11 +144,6 @@ table thead th {
 table thead th:first-child {
     flex: none;
 }
-table tr {
-    background: #ffffff;
-    display: flex;
-    flex-direction: row-reverse;
-}
 
 table tr td {
     border: 1px solid #e6edf1;
@@ -117,8 +155,20 @@ table tr td:first-child {
     flex: none;
     width: 86px;
 }
-
-@media only screen and (max-width: 640px) {
+table tbody .add_bottom .child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+table tbody .add_bottom .child p {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0;
+}
+table tbody .add_bottom .child p:last-child {
+    border: none;
+}
+@media only screen and (max-width: 991px) {
     table thead {
         display: none;
     }
@@ -133,16 +183,25 @@ table tr td:first-child {
         flex-direction: row-reverse;
         padding: 0;
     }
+
     table tr td:first-child {
         width: 100%;
     }
 
     table tbody tr {
         margin-bottom: 20px;
-        display: block;
         border: 1px solid #004976;
         background: #f9f9f9;
         overflow: hidden;
+
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    table tbody tr .child {
+        width: 70%;
+    }
+    table tbody tr .child p {
+        padding: 4px 0;
     }
 
     table tbody td::before {
@@ -152,9 +211,10 @@ table tr td:first-child {
         display: flex;
         background: #004976;
         color: #fff;
-        padding: 15px;
-        margin-inline-start: 10px;
+        padding: 12px;
         justify-content: center;
+        align-self: stretch;
+        align-items: center;
     }
 }
 `;

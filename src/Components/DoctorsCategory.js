@@ -7,6 +7,7 @@ import TableDoctor from './TableDoctors/TableDoctor';
 
 function DoctorsCategory() {
     const {setNumId , doctorsCategory} = useFilterDoctors()
+    console.log(doctorsCategory);
     const {id} = useParams()
     setNumId(id);
     

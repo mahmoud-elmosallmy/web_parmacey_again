@@ -1,79 +1,139 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router';
 import styled from 'styled-components'
 import { useFilterDoctors } from '../../Context/DoctorsFilterContext';
+import HeaderTopBody from '../Header/HeaderTopBody';
 
 function ShowDoctor() {
 
   const { id } = useParams()
   console.log(id);
 
-  const { all_doctors } = useFilterDoctors()
+//   const [gitName , setGitName] = useState("");
 
+  const { all_doctors } = useFilterDoctors()
   const showDoctor = all_doctors.filter((ele) => {
     return ele.id === id
   }).map((ele) => {
-    return (
-      <tr key={ele.id}>
-                <td>{ele.id}</td>
-                <td>{ele.category}</td>
-                <td>{ele.name}</td>
-                <td>{ele.privateNumber}</td>
-                <td>{ele.clinicNumber}</td>
-                <td>{ele.days}</td>
-                <td>{ele.appointments}</td>
-                <td>{ele.region}</td>
-                <td>{ele.address}</td>
-            </tr>
+    return(
+        <tr key={ele.id}>
+            <td className='add_bottom'>
+                <div className='child'>
+                    {ele.address.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                </div>
+            </td>
+            <td className='add_bottom'>
+                <div className='child'>
+                    {ele.region.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                </div>
+            </td>
+            <td>
+                <div className='child'>
+                    {ele.appointments}
+                </div>
+            </td>
+            <td>
+                <div className='child'>
+                    {ele.days}
+                </div>
+            </td>
+            <td className='add_bottom'>
+                <div className='child'>
+                    {ele.clinicNumber.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                    {ele.clinicNumberRegion2.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                </div>
+            </td>
+            <td>
+                <div className='child'>
+                    {ele.privateNumber}
+                </div>
+            </td>
+            <td>
+                <div className='child'>
+                    {ele.name}
+                </div>
+            </td>
+            <td>
+                <div className='child'>
+                    {ele.category}
+                </div>
+            </td>
+            <td>
+                <div className='child'>
+                    {ele.id}
+                </div>
+            </td>
+        </tr>
     )
   })
-  console.log(showDoctor);
+  const gitName = all_doctors.filter((ele) => {
+    return ele.id === id
+  }).map((ele) => {
+    return ele.name
+  })
+  console.log(gitName);
 
   useEffect(() => {
     const tables = document.querySelectorAll("table");
-    console.log(tables);
-    if (tables) {
-        tables.forEach((table) => {
-            const headerRow = table.querySelector("thead tr");
-            const thElements = headerRow.querySelectorAll("th");
-            const tdElements = table.querySelectorAll("tbody tr td");
-            // const tr = table.querySelectorAll("tbody tr");
+            console.log(tables);
+            if (tables) {
+                tables.forEach((table) => {
+                    const headerRow = table.querySelector("thead tr");
+                    const thElements = headerRow.querySelectorAll("th");
+                    const tdElements = table.querySelectorAll("tbody tr td");
+                    let mainIndex = 0;
+                    tdElements.forEach((td) => {
+                        console.log(td);
+                    td.setAttribute("data-label", thElements[mainIndex].innerHTML);
 
-            let mainIndex = 0;
-            tdElements.forEach((td) => {
-            // let index = mainIndex / tdElements.length;
-            td.setAttribute("data-label", thElements[mainIndex].innerHTML);
-
-            if (mainIndex === thElements.length - 1) {
-                mainIndex = 0;
-            } else {
-                mainIndex += 1;
+                    if (mainIndex === thElements.length - 1) {
+                        mainIndex = 0;
+                    } else {
+                        mainIndex += 1;
+                    }
+                    });
+                });
             }
-            });
-        });
-    }
-},[all_doctors])
+},[all_doctors , gitName ,id])
+console.log(gitName );
 
   return (
     <ShowDoctorStyle>
         <div className='container'>
-          <table width="100%">
-              <thead>
-                  <tr>
-                      <th> رقم التسلسل</th>
-                      <th>التخصص</th>
-                      <th> إسم الدكتور</th>
-                      <th> رقم الخاص</th>
-                      <th> رقم العيادة</th>
-                      <th> الأيام </th>
-                      <th>المواعيد</th>
-                      <th>المنطقه</th>
-                      <th>العنوان</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  {showDoctor}
-              </tbody>
+            <HeaderTopBody namebody={gitName} />
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <th>العنوان</th>
+                        <th>المنطقه</th>
+                        <th>المواعيد</th>
+                        <th> الأيام </th>
+                        <th> رقم العيادة</th>
+                        <th> رقم الخاص</th>
+                        <th> إسم الدكتور</th>
+                        <th>التخصص</th>
+                        <th> رقم التسلسل</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {showDoctor}
+                </tbody>
             </table>
         </div>
     </ShowDoctorStyle>
@@ -103,11 +163,6 @@ table thead th {
 table thead th:first-child {
     flex: none;
 }
-table tr {
-    background: #ffffff;
-    display: flex;
-    flex-direction: row-reverse;
-}
 
 table tr td {
     border: 1px solid #e6edf1;
@@ -119,8 +174,21 @@ table tr td:first-child {
     flex: none;
     width: 86px;
 }
+table tbody .add_bottom .child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+table tbody .add_bottom .child p {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0;
+}
+table tbody .add_bottom .child p:last-child {
+    border: none;
+}
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 991px) {
     table thead {
         display: none;
     }
@@ -135,16 +203,25 @@ table tr td:first-child {
         flex-direction: row-reverse;
         padding: 0;
     }
+
     table tr td:first-child {
         width: 100%;
     }
 
     table tbody tr {
         margin-bottom: 20px;
-        display: block;
         border: 1px solid #004976;
         background: #f9f9f9;
         overflow: hidden;
+
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    table tbody tr .child {
+        width: 70%;
+    }
+    table tbody tr .child p {
+        padding: 4px 0;
     }
 
     table tbody td::before {
@@ -154,9 +231,10 @@ table tr td:first-child {
         display: flex;
         background: #004976;
         color: #fff;
-        padding: 15px;
-        margin-inline-start: 10px;
+        padding: 12px;
         justify-content: center;
+        align-self: stretch;
+        align-items: center;
     }
 }
 `;

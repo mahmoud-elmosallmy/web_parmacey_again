@@ -40,7 +40,7 @@ function DoctorsFilterContext({children}) {
         dispatch({type: "FILTER_DOCTORS"})
     },[state.filters])
 
-    console.log(state);
+    // console.log(state);
 
     return (
         <FilterDoctors.Provider value={{ ...state , setNumId , updateFilterValue }}>{children}</FilterDoctors.Provider>
