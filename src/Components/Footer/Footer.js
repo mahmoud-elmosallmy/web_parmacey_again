@@ -16,7 +16,7 @@ function Footer() {
                     </Link>
                 </div>
                 <div className='number'>
-                    <h4>    للتواصل عبر الواتص</h4>
+                    <h4>    للتواصل عبر الواتس</h4>
                         <Link to={'https://wa.me/+0201009710971'} target='_blank' >
                         01009710971
                         </Link>

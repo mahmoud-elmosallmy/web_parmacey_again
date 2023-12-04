@@ -4,8 +4,8 @@ import reducer from "../Reducer/DoctorsReducer";
 
 const FilterDoctorsContext = createContext()
 
-const API = "https://data-base-pharmacy.onrender.com/doctors";
-// const API = "http://localhost:9000/doctors";
+// const API = "https://data-base-pharmacy.onrender.com/doctors";
+const API = "http://localhost:9000/doctors";
 const APICategory = "https://data-base-pharmacy.onrender.com/categorydoctors";
 
 function DoctorsContext({children}) {
