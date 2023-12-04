@@ -7,7 +7,7 @@ import { CgMenuRightAlt , CgClose } from "react-icons/cg";
 function Header() {
     const [menuIcon , setMenuIcon] = useState()
 
-    console.log(menuIcon);
+    // console.log(menuIcon);
 
     const menuScrollOpen = () => setMenuIcon(true)
     const menuScrollClose = () => setMenuIcon(false)

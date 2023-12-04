@@ -12,64 +12,100 @@ function TableDoctor({doctors}) {
     const showDoctors = doctors.map((ele) => {
         return(
             <tr key={ele.id}>
-                <td className='add_bottom'>
-                    <div className='child'>
-                        {ele.address.map((Elem) => {
-                            return (
-                                <p>{Elem}</p>
+            <td className='add_bottom'>
+                <div className='child'>
+                    {ele.address.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                </div>
+            </td>
+            <td className='add_bottom'>
+                <div className='child'>
+                    {ele.region.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                </div>
+            </td>
+
+            <td className='add_bottom'>
+                <div className='child'>
+                    {ele.appointments.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                    {ele.appointmentsRegion2 && ele.appointmentsRegion2.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                </div>
+            </td>
+            <td className='add_bottom'>
+                <div className='child'>
+                    {ele.days.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                    {ele.daysRegion2 && ele.daysRegion2.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                    {ele.daysRegion3 && ele.daysRegion3.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                </div>
+            </td>
+            <td className='add_bottom'>
+                <div className='child'>
+                    {ele.clinicNumber && ele.clinicNumber.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                    {ele.clinicNumberRegion2 && ele.clinicNumberRegion2.map((Elem) => {
+                        console.log(Elem);
+                        return (
+                            <p>{Elem}</p>
                             )
                         })}
-                    </div>
-                </td>
-                <td className='add_bottom'>
-                    <div className='child'>
-                        {ele.region.map((Elem) => {
-                            return (
-                                <p>{Elem}</p>
-                            )
-                        })}
-                    </div>
-                </td>
-                <td>
-                    <div className='child'>
-                        {ele.appointments}
-                    </div>
-                </td>
-                <td>
-                    <div className='child'>
-                        {ele.days}
-                    </div>
-                </td>
-                <td className='add_bottom'>
-                    <div className='child'>
-                        {ele.clinicNumber.map((Elem) => {
-                            return (
-                                <p>{Elem}</p>
-                            )
-                        })}
-                    </div>
-                </td>
-                <td>
-                    <div className='child'>
-                        {ele.privateNumber}
-                    </div>
-                </td>
-                <td>
-                    <div className='child'>
-                        {ele.name}
-                    </div>
-                </td>
-                <td>
-                    <div className='child'>
-                        {ele.category}
-                    </div>
-                </td>
-                <td>
-                    <div className='child'>
-                        {++num}
-                    </div>
-                </td>
-            </tr>
+                    {ele.clinicNumberRegion3 && ele.clinicNumberRegion3.map((Elem) => {
+                        console.log(Elem);
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                </div>
+            </td>
+            <td>
+                <div className='child'>
+                    {ele.privateNumber}
+                </div>
+            </td>
+            <td>
+                <div className='child'>
+                    {ele.name}
+                </div>
+            </td>
+            <td>
+                <div className='child'>
+                    {ele.category}
+                </div>
+            </td>
+            <td>
+                <div className='child'>
+                    {++num}
+                </div>
+            </td>
+        </tr>
         )
         
     })
@@ -83,7 +119,7 @@ function TableDoctor({doctors}) {
                     const tdElements = table.querySelectorAll("tbody tr td");
                     let mainIndex = 0;
                     tdElements.forEach((td) => {
-                        console.log(td);
+                        // console.log(td);
                     td.setAttribute("data-label", thElements[mainIndex].innerHTML);
 
                     if (mainIndex === thElements.length - 1) {

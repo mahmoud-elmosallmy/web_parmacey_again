@@ -1,9 +1,9 @@
 import React from 'react'
-import InputSearch from '../Components/InputSearch/InputSearch'
-import Departments from '../Sections/Home/Departments'
-import AddDoctors from '../Sections/Home/AddDoctors'
+import InputSearch from '../../Components/InputSearch/InputSearch'
+import Departments from '../../Sections/Home/Departments'
+import AddDoctors from '../../Sections/Home/AddDoctors'
 import styled from 'styled-components'
-import PhotoPharmacy from '../Sections/Home/PhotoPharmacy'
+import PhotoPharmacy from '../../Sections/Home/PhotoPharmacy'
 
 function Home() {
     

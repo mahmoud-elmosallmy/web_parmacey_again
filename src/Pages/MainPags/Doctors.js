@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import InputSearch from '../Components/InputSearch/InputSearch';
-import PageFilterDoctor from '../Sections/Doctors/PageFilterDoctor';
+import InputSearch from '../../Components/InputSearch/InputSearch';
+import PageFilterDoctor from '../../Sections/Doctors/PageFilterDoctor';
 
 function Doctors() {
 

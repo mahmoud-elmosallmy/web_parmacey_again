@@ -12,6 +12,8 @@ function ShowDoctor() {
 //   const [gitName , setGitName] = useState("");
 
   const { all_doctors } = useFilterDoctors()
+console.log(all_doctors);
+
   const showDoctor = all_doctors.filter((ele) => {
     return ele.id === id
   }).map((ele) => {
@@ -36,24 +38,54 @@ function ShowDoctor() {
                 </div>
             </td>
 
-            <td>
+            <td className='add_bottom'>
                 <div className='child'>
-                    {ele.appointments}
-                </div>
-            </td>
-            <td>
-                <div className='child'>
-                    {ele.days}
+                    {ele.appointments.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                    {ele.appointmentsRegion2 && ele.appointmentsRegion2.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
                 </div>
             </td>
             <td className='add_bottom'>
                 <div className='child'>
-                    {ele.clinicNumber.map((Elem) => {
+                    {ele.days.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                    {ele.daysRegion2 && ele.daysRegion2.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                    {ele.daysRegion3 && ele.daysRegion3.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                </div>
+            </td>
+            <td className='add_bottom'>
+                <div className='child'>
+                    {ele.clinicNumber && ele.clinicNumber.map((Elem) => {
                         return (
                             <p>{Elem}</p>
                         )
                     })}
                     {ele.clinicNumberRegion2 && ele.clinicNumberRegion2.map((Elem) => {
+                        console.log(Elem);
+                        return (
+                            <p>{Elem}</p>
+                            )
+                        })}
+                    {ele.clinicNumberRegion3 && ele.clinicNumberRegion3.map((Elem) => {
+                        console.log(Elem);
                         return (
                             <p>{Elem}</p>
                         )
@@ -121,13 +153,13 @@ console.log(gitName );
             <table width="100%">
                 <thead>
                     <tr>
-                        <th>العنوان</th>
+                        <th className='wprvite'>العنوان</th>
                         <th>المنطقه</th>
                         <th>المواعيد</th>
                         <th> الأيام </th>
                         <th> رقم العيادة</th>
                         <th> رقم الخاص</th>
-                        <th> إسم الدكتور</th>
+                        <th className='wnmae'> إسم الدكتور</th>
                         <th>التخصص</th>
                         <th> رقم التسلسل</th>
                     </tr>
@@ -159,6 +191,12 @@ table thead th {
     font-weight: 500;
     flex: 1;
     text-align: center;
+}
+table thead .wprvite {
+    width: 200px;
+}
+table thead .wname {
+    width: 140px;
 }
 
 table thead th:first-child {

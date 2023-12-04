@@ -1,6 +1,6 @@
 import React from 'react'
-import InputSearch from '../Components/InputSearch/InputSearch'
-import Departments from '../Sections/Home/Departments'
+import InputSearch from '../../Components/InputSearch/InputSearch'
+import Departments from '../../Sections/Home/Departments'
 import styled from 'styled-components'
 
 function Specialties() {

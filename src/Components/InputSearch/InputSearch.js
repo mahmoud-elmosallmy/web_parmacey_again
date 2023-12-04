@@ -16,10 +16,10 @@ function InputSearch() {
         <InputSearchStyle>
             <h2>إبحث عن الدكتور</h2>
             <div className="input_search">
-                <form onClick={handleSubmit} className="form-outline" data-mdb-input-init>
+                <form onClick={handleSubmit} className="form-outline" >
                     <input type="search" id="form1" className="form-control" name='search' placeholder='إكتب هنا' onChange={updateFilterValue} />
                     {/* <label className="form-label" htmlFor="form1">Search</label> */}
-                    <button type="submit" className="btn btn-primary" data-mdb-ripple-init>
+                    <button type="submit" className="btn btn-primary" >
                         <FaSearch /> بحث
                     </button>
                 </form>
@@ -35,7 +35,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 height: 12vh;
-margin-bottom: 15px;
+margin: 35px 0px;
 
 h2 {
     margin-bottom: 28px;
