@@ -67,6 +67,8 @@ const DepartmentStyle = styled.section`
 
     img {
         border-radius: 15px;
+        /* width: 250px; */
+        /* height: 250px; */
     }
 }
 .card-body {
