@@ -16,12 +16,12 @@ function SearchForCategory() {
 
     const getUniqueData = (data , property) => {
         // let newVal = []
-        let arr = []
+        let arr = [];
         data.map((ele) => {
-            arr.push(...ele[property])
+            return arr.push(...ele[property])
         })
-        return (arr = ["الجميع" , ...new Set(arr)])
-      }
+        return arr = ["الجميع" , ...new Set(arr)]
+    }
 
 
     const regionOnlyData = getUniqueData(doctorsCategory2 , "region")

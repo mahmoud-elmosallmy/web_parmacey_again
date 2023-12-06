@@ -6,7 +6,7 @@ import Spine from '../../Components/Loading/Spine';
 
 function Departments() {
 
-    const { category , isLoadingDataCategory , doctors} = useDoctors();
+    const { category , isLoadingDataCategory } = useDoctors();
 
     // console.log(isLoadingDataCategory);
     if (isLoadingDataCategory) {
