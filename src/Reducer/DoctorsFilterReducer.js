@@ -50,7 +50,7 @@ function DoctorsFilterReducer(state , action) {
         case "FILTER_REGION":
             let { doctorsCategory2 } = state;
             let res = [...doctorsCategory2]
-            console.log(res);
+            // console.log(res);
             let { region } = state.filters;
             let temFilterRegionch1;
             let temFilterRegionch2;
@@ -79,7 +79,7 @@ function DoctorsFilterReducer(state , action) {
             // console.log(temFilterRegionch1);
             // console.log(temFilterRegionch2);
             // console.log(temFilterRegionch3);
-            console.log(res);
+            // console.log(res);
             return {
                 ...state,
                 doctorsCategory: res
