@@ -12,10 +12,12 @@ function DoctorsFilterContext({children}) {
     const initialAuthState = {
         all_doctors: [],
         doctorsCategory: [],
+        doctorsCategory2: [],
         filterDoctors: [],
         isLoadingFilterDoctors: true,
         filters: {
-            search: ""
+            search: "",
+            filterRegion: []
         }
     }
 
@@ -31,14 +33,20 @@ function DoctorsFilterContext({children}) {
     useEffect(() => {
         dispatch({type: "LOAD_FILTER_DOCTORS", payload: doctors})
     },[doctors])
-
+    
     useEffect(() => {
         dispatch({type: "GIT_DOCTORS_CATEGORY", payload: [doctors , `${numId}`]})
+        dispatch({type: "GIT_DOCTORS_CATEGORY2", payload: [doctors , `${numId}`]})
     },[numId,doctors])
-
+    
     useEffect(() => {
+        dispatch({type: "FILTER_REGION"})
         dispatch({type: "FILTER_DOCTORS"})
     },[state.filters])
+
+    // useEffect(() => {
+    //     dispatch({type: "FILTER_REGION", payload: state.doctorsCategory})
+    // },[state.doctorsCategory])
 
     // console.log(state);
 

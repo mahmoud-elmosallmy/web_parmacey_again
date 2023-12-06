@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Photo from "../../Assets/parmacey.png";
 function PhotoPharmacy() {
+
+
   return (
     <PhotoPharmacyStyle>
         <div className='divimage'>

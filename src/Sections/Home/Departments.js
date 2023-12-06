@@ -29,9 +29,9 @@ function Departments() {
     return (
         <DepartmentStyle>
             <div className='container'>
-                <div className='num_doctor'>
+                {/* <div className='num_doctor'>
                     <div>عدد الدكاترة المسجلين <span>{doctors.length}</span></div>
-                </div>
+                </div> */}
                 <div className='parent'>
                     {showDepartments}
                 </div>
@@ -40,7 +40,7 @@ function Departments() {
     )
 }
 const DepartmentStyle = styled.section`
-.num_doctor {
+/* .num_doctor {
     display: flex;
     flex-direction: row-reverse;
     margin-bottom: 30px;
@@ -51,7 +51,7 @@ const DepartmentStyle = styled.section`
 .num_doctor div span {
     background-color: #f7550c;
     color: white;
-}
+} */
 .parent {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

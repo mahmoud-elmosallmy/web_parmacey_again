@@ -6,7 +6,7 @@ import { useDoctors } from '../../Context/DoctorsContext';
 
 function TableDoctor({doctors}) {
 
-    const { isLoadingDataCategory} = useDoctors()
+    const { isLoadingDataCategory } = useDoctors()
 
     let num = 0
     const showDoctors = doctors.map((ele) => {
@@ -72,13 +72,13 @@ function TableDoctor({doctors}) {
                         )
                     })}
                     {ele.clinicNumberRegion2 && ele.clinicNumberRegion2.map((Elem) => {
-                        console.log(Elem);
+                        // console.log(Elem);
                         return (
                             <p>{Elem}</p>
                             )
                         })}
                     {ele.clinicNumberRegion3 && ele.clinicNumberRegion3.map((Elem) => {
-                        console.log(Elem);
+                        // console.log(Elem);
                         return (
                             <p>{Elem}</p>
                         )
@@ -111,7 +111,7 @@ function TableDoctor({doctors}) {
     })
     useEffect(() => {
             const tables = document.querySelectorAll("table");
-            console.log(tables);
+            // console.log(tables);
             if (tables) {
                 tables.forEach((table) => {
                     const headerRow = table.querySelector("thead tr");

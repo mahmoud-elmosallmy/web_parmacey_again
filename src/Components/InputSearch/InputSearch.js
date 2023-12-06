@@ -3,10 +3,12 @@ import styled from 'styled-components'
 import { FaSearch } from "react-icons/fa";
 import { useFilterDoctors } from '../../Context/DoctorsFilterContext';
 import SearchDoctors from './SearchDoctors';
+import { useDoctors } from '../../Context/DoctorsContext';
 
 function InputSearch() {
 
     const { filters: {search} ,  updateFilterValue } =useFilterDoctors();
+    const {doctors} = useDoctors();
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -14,6 +16,9 @@ function InputSearch() {
 
     return (
         <InputSearchStyle>
+            <div className='num_doctor'>
+                <div>عدد الدكاترة المسجلين <span>{doctors.length}</span></div>
+            </div>
             <h2>إبحث عن الدكتور</h2>
             <div className="input_search">
                 <form onClick={handleSubmit} className="form-outline" >
@@ -36,6 +41,19 @@ align-items: center;
 justify-content: center;
 height: 12vh;
 margin: 35px 0px;
+
+.num_doctor {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 30px;
+}
+.num_doctor div {
+    border-bottom: 3px solid #f7550c;
+}
+.num_doctor div span {
+    background-color: #f7550c;
+    color: white;
+}
 
 h2 {
     margin-bottom: 28px;
@@ -76,7 +94,7 @@ h2 {
 }
 @media screen and (min-width: 768px) {
     & {
-        margin: 25px 0;
+        margin: 30px 0;
     }
 }
 `;

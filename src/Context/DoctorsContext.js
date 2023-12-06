@@ -6,6 +6,7 @@ const FilterDoctorsContext = createContext()
 
 const API = "https://data-base-pharmacy.onrender.com/doctors";
 // const API = "http://localhost:9000/doctors";
+// const APICategory = "http://localhost:9000/categorydoctors";
 const APICategory = "https://data-base-pharmacy.onrender.com/categorydoctors";
 
 function DoctorsContext({children}) {
