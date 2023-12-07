@@ -12,6 +12,7 @@ function SearchForCategory() {
     console.log(addActive);
 
     const getUniqueData = (data , property) => {
+        console.log(data);
         let arr = [];
         data.map((ele) => {
             return arr.push(...ele[property])
@@ -34,7 +35,7 @@ function SearchForCategory() {
     const regionOnlyData = getUniqueData(doctorsCategory2 , "region")
 
     const showCategoryData = regionOnlyData.map((ele,i) => {
-        console.log(i);
+        // console.log(i);
         return <button 
             key={i}
             type='button' 
