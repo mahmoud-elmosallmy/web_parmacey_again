@@ -33,7 +33,7 @@ function InputSearch() {
                 </form>
                 {/* {search && <SearchDoctors /> } */}
                 { <SearchDoctors /> }
-                <NavLink to={`/show_doctor/10`} className='box'>ششششششششششش</NavLink>
+                <NavLink to={`/show_doctor/0`} className='box'>ششششششششششش</NavLink>
             </div>
         </InputSearchStyle>
     )
