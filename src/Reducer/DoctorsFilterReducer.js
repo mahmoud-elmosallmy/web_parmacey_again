@@ -35,7 +35,7 @@ function DoctorsFilterReducer(state , action) {
             const {all_doctors} = state;
             let temFilterDoctors = [...all_doctors]
             const {search} = state.filters;
-
+            console.log(search);
             if (search) {
                 temFilterDoctors = temFilterDoctors.filter((ele) => {
                     return ele.name.toLowerCase().includes(search)
