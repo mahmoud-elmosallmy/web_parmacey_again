@@ -8,7 +8,7 @@ function SearchDoctors() {
     const {filterDoctors , setOnSearch} = useFilterDoctors()
 
     const showDoctorsSearch = filterDoctors.map((ele) => {
-        console.log(ele.region);
+        console.log(ele.id);
         return (
             <NavLink to={`/show_doctor/${ele.id}`} className='box' onClick={() => setOnSearch(ele.name)}>
                 <div className='data'>
