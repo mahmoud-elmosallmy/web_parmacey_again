@@ -1,6 +1,6 @@
 import React from 'react'
 import { useFilterDoctors } from '../../Context/DoctorsFilterContext'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 function SearchDoctors() {
@@ -10,7 +10,7 @@ function SearchDoctors() {
     const showDoctorsSearch = filterDoctors.map((ele) => {
         console.log(ele.region);
         return (
-            <Link to={`/show_doctor/${ele.id}`} className='box' onClick={() => setOnSearch(ele.name)}>
+            <NavLink to={`/show_doctor/${ele.id}`} className='box' onClick={() => setOnSearch(ele.name)}>
                 <div className='data'>
                     <h5>{ele.name}</h5>
                     <div className='category_region'>
@@ -18,7 +18,7 @@ function SearchDoctors() {
                         <p>{ele.region}</p>
                     </div>
                 </div>
-            </Link>
+            </NavLink>
         )
     })
   return (

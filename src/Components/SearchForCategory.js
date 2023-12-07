@@ -42,7 +42,8 @@ function SearchForCategory() {
             className={`${addActive === i ? "active" : ""}`} 
             name='region' 
             onClick={(ele) => {
-                    return (updateFilterValue(ele),
+                    return (
+                        updateFilterValue(ele),
                         setAddActive(i)
                     )
                 }

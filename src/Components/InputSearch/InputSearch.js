@@ -4,6 +4,7 @@ import { FaSearch } from "react-icons/fa";
 import { useFilterDoctors } from '../../Context/DoctorsFilterContext';
 import SearchDoctors from './SearchDoctors';
 import { useDoctors } from '../../Context/DoctorsContext';
+import { NavLink } from 'react-router-dom';
 
 function InputSearch() {
 
@@ -29,6 +30,7 @@ function InputSearch() {
                     </button>
                 </form>
                 {search && <SearchDoctors /> }
+                <NavLink to={`/show_doctor/10`} className='box'>ششششششششششش</NavLink>
             </div>
         </InputSearchStyle>
     )
